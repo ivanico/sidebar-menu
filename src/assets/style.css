@@ -74,3 +74,20 @@
     margin-bottom: 10px;
 }
 
+.ui.inverted.vertical{
+    top: 48px;
+}
+
+.ui.menu {
+    border-radius: 0 !important;
+    background-color: #2185d0;
+    min-height: 49px;
+}
+
+.ui.menu a.item{
+    color: white;
+}
+
+.ui.inline.dropdown{
+    color: white;
+}

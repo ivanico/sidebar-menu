@@ -9,13 +9,16 @@ const AdminSidebar = () => {
     const [activeIndex,setActiveIndex] = useState(null);
     const [sidebarActive, setSidebarActive] = useState(false);
 
+
     const handleClick = (e, titleProps) => {
       const { index } = titleProps
       const newIndex = activeIndex === index ? -1 : index
       setActiveIndex( newIndex )
     }
 
-    const showSidebar = () => {setSidebarActive(!sidebarActive)}
+    const showSidebar = () => {setSidebarActive(!sidebarActive)
+        setActiveIndex(-1)}
+
     return (
       <div>
         <Sidebar      
@@ -25,11 +28,12 @@ const AdminSidebar = () => {
              vertical
              visible
              animation="overlay"
+             
         >
         <Icon name={sidebarActive? "close" : "bars"} size="large" onClick={showSidebar} />
         <div className={sidebarActive ? 'nav-sidebar active' : 'nav-sidebar'}>
 
-        <Accordion inverted >
+        <Accordion inverted>
           <Accordion.Title
           className="ui"
           as={Menu.Item}>
@@ -50,7 +54,8 @@ const AdminSidebar = () => {
             as={Menu.Item}
             active={activeIndex === 0}
             index={0}
-            onClick={sidebarActive? handleClick : showSidebar}
+            onMouseEnter={()=>{setActiveIndex(0)}}
+            onClick={sidebarActive? handleClick : showSidebar }
             ><Icon name="chart area" size="large"/><span>
           Внес и обработка на административни податоци
             </span>
@@ -60,8 +65,8 @@ const AdminSidebar = () => {
           <NavLink to="/admin/centralen-depozitar"><span>Централен депозитар за хартии од вредност</span></NavLink>
           <NavLink to="/admin/narodna-banka"><span>Народна банка</span></NavLink>
           <NavLink to="/admin/fond-za-penzisko"><span>Фонд за пензиско и инвалидско осигурување</span></NavLink>
-          <NavLink to="/admin"><span>Список на консолидирани деловни субјекти</span></NavLink>
-          <NavLink to="/admin"><span>Странски директни инвестиции</span></NavLink>
+          <NavLink to="/admin/spisok"><span>Список на консолидирани деловни субјекти</span></NavLink>
+          <NavLink to="/admin/stranski-direktori"><span>Странски директни инвестиции</span></NavLink>
           <NavLink to="/admin"><span>Завршни годишни сметки (од НАИМС)</span></NavLink>
           <NavLink to="/admin"><span>Статистички извештај за приходите по дејности</span></NavLink>
           <NavLink to="/admin"><span>Список на консолидирани деловни субјекти</span></NavLink>
@@ -72,6 +77,7 @@ const AdminSidebar = () => {
             as={Menu.Item}
             active={activeIndex === 1}
             index={1}
+            onMouseEnter={()=>{setActiveIndex(1)}}
             onClick={sidebarActive? handleClick : showSidebar}
             ><Icon name="chart area" size="large" /><span>
             Идентификација на странски лица
@@ -89,6 +95,7 @@ const AdminSidebar = () => {
             as={Menu.Item}
             active={activeIndex === 2}
             index={2}
+            onMouseEnter={()=>{setActiveIndex(2)}}
             onClick={sidebarActive? handleClick : showSidebar}
             ><Icon name="chart area" size="large" /><span>
             Определување на групите на претпријатија
@@ -106,6 +113,7 @@ const AdminSidebar = () => {
             as={Menu.Item}
             active={activeIndex === 3}
             index={3}
+            onMouseEnter={()=>{setActiveIndex(3)}}
             onClick={sidebarActive? handleClick : showSidebar}
             ><Icon name="chart area" size="large" /><span>
             Преглед и ажуриране
@@ -129,6 +137,7 @@ const AdminSidebar = () => {
             as={Menu.Item}
             active={activeIndex === 4}
             index={4}
+            onMouseEnter={()=>{setActiveIndex(4)}}
             onClick={sidebarActive? handleClick : showSidebar}
             ><Icon name="chart area" size="large" /><span>
             Уредување на СДР единиците

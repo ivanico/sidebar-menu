@@ -2,7 +2,9 @@ import {  Route, Router } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import { Segment } from "semantic-ui-react";
 import Dashboard from "./admin/Dashboard";
+import AdminMenu from "./admin/AdminMenu";
 import AdminSidebar from "./admin/AdminSidebar";
+import AdminTopMenu from "./admin/AdminTopMenu";
 import history from "./History";
 import StartPage from "./StartPage";
 import KorisniciUslugi from "./users/KorisniciUslugi";
@@ -13,14 +15,17 @@ import Registracija from "./users/Registracija";
 import CentralenDepozitar from "./users/vnes-i-obrabotna-na-administrativni-podatoci/CentralenDepozitar";
 import NarodnaBanka from "./users/vnes-i-obrabotna-na-administrativni-podatoci/NarodnaBanka";
 import FondZaPenzisko from "./users/vnes-i-obrabotna-na-administrativni-podatoci/FondZaPenzisko";
+import Spisok from "./users/vnes-i-obrabotna-na-administrativni-podatoci/Spisok";
+import StranskiDirektori from "./users/vnes-i-obrabotna-na-administrativni-podatoci/StranskiDirektori";
 
 function App() {
   return (
     <div className="App">
-      <Segment>
         <Router history={history}>
           <Route path="/" exact component={StartPage} />
-          <Route path="/admin" component={AdminSidebar} />
+          {/* <Route path="/admin" component={AdminSidebar} />
+          <Route path="/admin" component={AdminTopMenu} /> */}
+          <Route path="/admin" component={AdminMenu}/>
           <Route path="/admin" exact component={Dashboard} />
 
           {/* Мени на екранот за СДР експертите */}
@@ -33,9 +38,12 @@ function App() {
               <Route path="/admin/centralen-depozitar" exact component={CentralenDepozitar} />
               <Route path="/admin/narodna-banka" exact component={NarodnaBanka} />
               <Route path="/admin/fond-za-penzisko" exact component={FondZaPenzisko} />
+              <Route path="/admin/spisok" exact component={Spisok} />
+              <Route path="/admin/stranski-direktori" exact component={StranskiDirektori} />
+              <Route path="/admin/fond-za-penzisko" exact component={StranskiDirektori} />
+
             </div>
         </Router>
-      </Segment>
     </div>
   );
 }
