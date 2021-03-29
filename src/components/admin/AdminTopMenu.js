@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Dropdown, Icon, Menu } from 'semantic-ui-react';
 import "semantic-ui-css/semantic.min.css";
+import img from '../../assets/1.jpg'
 
 
 const AdminTopMenu = () => {
@@ -8,25 +9,30 @@ const AdminTopMenu = () => {
     const [activeItem,setActiveItem]= useState('')
     const friendOptions = [
       {
-        key: 'Jenny Hess',
-        text: 'Jenny Hess',
-        value: 'Jenny Hess',
-        image: <Icon name="react" size="large" />,
+        key: 'Ivan Petrevski',
+        text: 'Ivan Petrevski',
+        value: 'Ivan Petrevski',
+        // image: <Icon name="react" size="large" />
+        image: <img src={img} style={{width:"32px" , height:"32px", borderRadius:"50%"}}/>
+
       },
       {
         key: 'Settings & privacy',
         text: 'Settings & privacy',
         value: 'Settings & privacy',
+        image: <Icon name="setting" size="large" />
       },
       {
         key: 'Help & support',
         text: 'Help & support',
         value: 'Help & support',
+        image: <Icon name="help" size="large" />
       },
       {
         key: 'Log out',
         text: 'Log out',
         value: 'Log out',
+        image: <Icon name="log out" size="large" />
       }
       
     ]

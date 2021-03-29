@@ -36,32 +36,40 @@ const AdminSidebar = () => {
         <Accordion inverted>
           <Accordion.Title
           className="ui"
-          as={Menu.Item}>
+          as={Menu.Item}
+          active={activeIndex === 0}
+          index={0}
+          onClick={handleClick}>
           <NavLink to="/admin/korisnici-i-uslugi"><Icon name="chart area" size="large" /><span>Корисници и улоги</span></NavLink>
           </Accordion.Title>
           <Accordion.Title
           className="ui"
-          as={Menu.Item}>
+          as={Menu.Item}
+          active={activeIndex === 1}
+          index={1}
+          onClick={handleClick}>
             <NavLink to="/admin/klasifikacii"><Icon name="chart area" size="large" /><span>Класификации и кодни листи</span></NavLink>
           </Accordion.Title>
           <Accordion.Title
           className="ui"
-          as={Menu.Item}>
+          as={Menu.Item}
+          active={activeIndex === 2}
+          index={2}
+          onClick={handleClick}>
           <NavLink to="/admin/mesecha-obrabotka"><Icon name="chart area" size="large" /><span>Месечна обработка на ЦР податоците</span></NavLink>
           </Accordion.Title>
           <Accordion.Title
             className="ui"
             as={Menu.Item}
-            active={activeIndex === 0}
-            index={0}
-            onMouseEnter={()=>{setActiveIndex(0)}}
+            active={activeIndex === 3}
+            index={3}
             onClick={sidebarActive? handleClick : showSidebar }
             ><Icon name="chart area" size="large"/><span>
           Внес и обработка на административни податоци
             </span>
             <Icon name="dropdown" />
           </Accordion.Title>
-          <Accordion.Content active={activeIndex === 0} as={Item} className="ui" >
+          <Accordion.Content active={activeIndex === 3} as={Item} className="ui" >
           <NavLink to="/admin/centralen-depozitar"><span>Централен депозитар за хартии од вредност</span></NavLink>
           <NavLink to="/admin/narodna-banka"><span>Народна банка</span></NavLink>
           <NavLink to="/admin/fond-za-penzisko"><span>Фонд за пензиско и инвалидско осигурување</span></NavLink>
@@ -75,15 +83,14 @@ const AdminSidebar = () => {
           <Accordion.Title
             className="ui"
             as={Menu.Item}
-            active={activeIndex === 1}
-            index={1}
-            onMouseEnter={()=>{setActiveIndex(1)}}
+            active={activeIndex === 4}
+            index={4}
             onClick={sidebarActive? handleClick : showSidebar}
             ><Icon name="chart area" size="large" /><span>
             Идентификација на странски лица
             </span><Icon name="dropdown" />
           </Accordion.Title>
-          <Accordion.Content active={activeIndex === 1} as={Item} className="ui" >
+          <Accordion.Content active={activeIndex === 4} as={Item} className="ui" >
           <NavLink to="/admin"><span>Централен регистар</span></NavLink>
           <NavLink to="/admin"><span>Централен депозитар за хартии од вредност</span></NavLink>
           <NavLink to="/admin"><span>Народна банка</span></NavLink>
@@ -93,15 +100,14 @@ const AdminSidebar = () => {
           <Accordion.Title
             className="ui"
             as={Menu.Item}
-            active={activeIndex === 2}
-            index={2}
-            onMouseEnter={()=>{setActiveIndex(2)}}
+            active={activeIndex === 5}
+            index={5}
             onClick={sidebarActive? handleClick : showSidebar}
             ><Icon name="chart area" size="large" /><span>
             Определување на групите на претпријатија
             </span><Icon name="dropdown" />
           </Accordion.Title>
-          <Accordion.Content active={activeIndex === 2} as={Item} className="ui" >
+          <Accordion.Content active={activeIndex === 5} as={Item} className="ui" >
           <NavLink to="/admin"><span>Екстракција на ЛЕ и нивните врски од СДР</span></NavLink>
           <NavLink to="/admin"><span>Обработка на консолидирани деловни субјекти</span></NavLink>
           <NavLink to="/admin"><span>Формирање на групите на претпријатија</span></NavLink>
@@ -111,15 +117,14 @@ const AdminSidebar = () => {
           <Accordion.Title
             className="ui"
             as={Menu.Item}
-            active={activeIndex === 3}
-            index={3}
-            onMouseEnter={()=>{setActiveIndex(3)}}
+            active={activeIndex === 6}
+            index={6}
             onClick={sidebarActive? handleClick : showSidebar}
             ><Icon name="chart area" size="large" /><span>
             Преглед и ажуриране
             </span><Icon name="dropdown" />
           </Accordion.Title>
-          <Accordion.Content active={activeIndex === 3} as={Item} className="ui" >
+          <Accordion.Content active={activeIndex === 6} as={Item} className="ui" >
           <NavLink to="/admin"><span>Преглед на групите на претпријатија</span></NavLink>
           <NavLink to="/admin"><span>Ажурирање на групите на претпријатија</span></NavLink>
           <NavLink to="/admin"><span>Преглед на претпријатија</span></NavLink>
@@ -129,21 +134,22 @@ const AdminSidebar = () => {
           <Accordion.Title
             className="ui"
             as={Menu.Item}
-            >
+            active={activeIndex === 7}
+            index={7}
+            onClick={handleClick}>
           <NavLink to="/admin/godisna-obrabotka"><Icon name="chart area" size="large" /><span>Годишна обработка</span></NavLink>
           </Accordion.Title>
           <Accordion.Title
             className="ui"
             as={Menu.Item}
-            active={activeIndex === 4}
-            index={4}
-            onMouseEnter={()=>{setActiveIndex(4)}}
+            active={activeIndex === 8}
+            index={8}
             onClick={sidebarActive? handleClick : showSidebar}
             ><Icon name="chart area" size="large" /><span>
             Уредување на СДР единиците
             </span><Icon name="dropdown" />
           </Accordion.Title>
-          <Accordion.Content active={activeIndex === 4} as={Item} className="ui" >
+          <Accordion.Content active={activeIndex === 8} as={Item} className="ui" >
           <NavLink to="/admin"><span>Легалните единици и нивните врски</span></NavLink>
           <NavLink to="/admin"><span>Претпријатијата и нивните врски</span></NavLink>
           <NavLink to="/admin"><span>Групите претпријатија и нивните врски</span></NavLink>
@@ -152,7 +158,9 @@ const AdminSidebar = () => {
           <Accordion.Title
           className="ui"
           as={Menu.Item}
-          >
+          active={activeIndex === 9}
+          index={9}
+          onClick={handleClick}>
           <NavLink to="/admin/registracija"><Icon name="chart area" size="large" /><span>Регистрирај единечно претпријатие и/или локална единица</span></NavLink>
           </Accordion.Title>
         </Accordion>
