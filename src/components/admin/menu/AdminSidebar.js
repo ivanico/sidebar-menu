@@ -40,7 +40,7 @@ const AdminSidebar = () => {
               sidebarActive={sidebarActive}
               index={0}
               content="Корисници и улоги"
-              icon="chart area"
+              icon="tachometer alternate"
               iconSize="large"
               to="/admin/korisnici-i-uslugi"
             />
@@ -73,9 +73,10 @@ const AdminSidebar = () => {
               icon="chart area"
               iconSize="large" 
               isHeading={true}
-              >
-
+              />
             <SidebarSubMenu
+              icon="chart area"
+              iconSize="large" 
               activeIndex={activeIndex}
               sidebarActive={sidebarActive}
               index={3}
@@ -114,7 +115,6 @@ const AdminSidebar = () => {
                 />
               <SidebarSubMenuItem to="/admin" content="Преглед на логови" />
             </SidebarSubMenu>
-                </SidebarMenuItem>
             <SidebarMenuItem
               activeIndex={activeIndex}
               handleClick={handleClick}
@@ -126,6 +126,8 @@ const AdminSidebar = () => {
               isHeading={true}
             />
             <SidebarSubMenu
+              icon="chart area"
+              iconSize="large" 
               activeIndex={activeIndex}
               sidebarActive={sidebarActive}
               index={4}

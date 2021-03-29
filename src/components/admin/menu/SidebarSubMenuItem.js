@@ -11,13 +11,21 @@ const SidebarSubMenuItem = (props) => {
       </NavLink>
     );
   }
+  if(!sidebarActive)
   return (
-    // <Dropdown.Item selection icon='attention' text={<NavLink to={to}> <span>{content}</span></NavLink>} /> 
-    // <Dropdown text={<span>{content}</span>} options={<NavLink to={to}></NavLink>} simple item />
-    <NavLink to={to}>
-        <span>{content}</span>
+      <NavLink to={to}>
+        <span style={{display: "inline"}}>{content}</span>
       </NavLink>
   );
+
+  return (
+    <Dropdown.Item>
+      <NavLink to={to}>
+        <span style={{display: "inline"}}>{content}</span>
+      </NavLink>
+    </Dropdown.Item>
+  );
+
 
 }
  

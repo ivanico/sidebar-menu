@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown, Icon, Menu } from 'semantic-ui-react';
+import { Dropdown, Icon, Menu, Image } from 'semantic-ui-react';
 import "semantic-ui-css/semantic.min.css";
 import img from '../../../assets/1.jpg'
 
@@ -8,14 +8,6 @@ const AdminTopMenu = () => {
 
     const [activeItem,setActiveItem]= useState('')
     const friendOptions = [
-      {
-        key: 'Ivan Petrevski',
-        text: 'Ivan Petrevski',
-        value: 'Ivan Petrevski',
-        // image: <Icon name="react" size="large" />
-        image: <img src={img} style={{width:"32px" , height:"32px", borderRadius:"50%"}}/>
-
-      },
       {
         key: 'Settings & privacy',
         text: 'Settings & privacy',
@@ -74,7 +66,12 @@ const AdminTopMenu = () => {
                   inline
                   image
                   options={friendOptions}
-                  defaultValue={friendOptions[0].value}
+                  trigger={
+                    <div style={{display:'inline-block'}}>
+                    <Image src={img} avatar />
+                    <span> UsernameUsernameUsernameUsernameUsernameUsername</span>
+                    </div>
+                    }
                 />
               </span>
             </Menu.Item>

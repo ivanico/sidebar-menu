@@ -1,9 +1,8 @@
 import React from 'react';
-import { Accordion, Dropdown, Item } from 'semantic-ui-react';
+import { Accordion, Dropdown, Icon, Item } from 'semantic-ui-react';
 
 const SidebarSubMenu = (props) => {
-
-  const {activeIndex, index, sidebarActive} = props;
+  const { activeIndex, index, sidebarActive, icon, iconSize } = props;
   if(sidebarActive){
     return ( <Accordion.Content
     active={activeIndex === index}
@@ -13,10 +12,16 @@ const SidebarSubMenu = (props) => {
     {props.children}
     </Accordion.Content> );}
     return ( 
+
+    <Dropdown  pointing="left" text="" trigger={<a href="#" className="ui item">
+      <Icon name={icon} size={iconSize} />
+      </a>
+    } >
       <Dropdown.Menu>
-      {/* <Icon name={icon} size={iconSize} /> */}
       {props.children}
-    </Dropdown.Menu>
+      </Dropdown.Menu>
+    </Dropdown>
+
        );
 }
  

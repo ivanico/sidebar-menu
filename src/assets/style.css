@@ -75,7 +75,7 @@
 }
 
 .ui.inverted.vertical{
-    top: 48px;
+    top: 56px;
 }
 
 .ui.menu {
@@ -86,9 +86,32 @@
 
 .ui.menu a.item{
     color: white;
+    padding: 18px 15px !important;
+}
+.ui.left.pointing.dropdown{
+  display: block;
 }
 
 .ui.inline.dropdown{
     color: white;
 }
 
+.ui.inverted.vertical.ui.overlay.left.visible.sidebar.blue.menu {
+  overflow: visible !important;
+}
+
+.ui.left.pointing.dropdown:after {
+  content: '';
+  border: 3px solid #fff;
+  color: #2185d0;
+  padding: 4px;
+  border-left: none;
+  border-bottom: none;
+  opacity: 0.3;
+  position: absolute;
+  right: 6px;
+  top: 39%;
+  transform: rotate(
+  45deg
+  );
+}

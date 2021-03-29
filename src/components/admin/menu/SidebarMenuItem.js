@@ -29,6 +29,11 @@ const SidebarMenuItem = (props) => {
 
   </Accordion.Title> );
   }
+
+  if(isHeading){
+    return (<React.Fragment></React.Fragment>)
+  }
+  
   return ( <Menu.Item
     className="ui"
     active={activeIndex === index}
@@ -40,13 +45,7 @@ const SidebarMenuItem = (props) => {
         <Icon name={icon}size={iconSize} />
       </NavLink>
     }
-    {isHeading &&
-      <>
-     <Dropdown simple text={<Icon name={icon} size={iconSize} />}>
-       {props.children}
-     </Dropdown>
-      </>
-    }
+
   </Menu.Item> );
 }
  
