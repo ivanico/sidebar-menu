@@ -1,10 +1,7 @@
 import {  Route, Router } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
-import { Segment } from "semantic-ui-react";
 import Dashboard from "./admin/Dashboard";
-import AdminMenu from "./admin/AdminMenu";
-import AdminSidebar from "./admin/AdminSidebar";
-import AdminTopMenu from "./admin/AdminTopMenu";
+import AdminMenu from "./admin/menu/AdminMenu";
 import history from "./History";
 import StartPage from "./StartPage";
 import KorisniciUslugi from "./users/KorisniciUslugi";

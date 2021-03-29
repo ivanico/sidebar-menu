@@ -4,10 +4,10 @@ import AdminTopMenu from './AdminTopMenu'
 
 function AdminMenu() {
     return (
-        <div>
+        <>
             <AdminTopMenu/>
             <AdminSidebar/>
-        </div>
+        </>
     )
 }
 

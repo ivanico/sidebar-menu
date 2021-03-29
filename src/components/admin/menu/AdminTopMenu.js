@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Dropdown, Icon, Menu } from 'semantic-ui-react';
 import "semantic-ui-css/semantic.min.css";
-import img from '../../assets/1.jpg'
+import img from '../../../assets/1.jpg'
 
 
 const AdminTopMenu = () => {
