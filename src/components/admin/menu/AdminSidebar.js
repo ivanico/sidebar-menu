@@ -73,46 +73,48 @@ const AdminSidebar = () => {
               icon="chart area"
               iconSize="large" 
               isHeading={true}
-            />
+              >
+
             <SidebarSubMenu
               activeIndex={activeIndex}
               sidebarActive={sidebarActive}
               index={3}
-            >
+              >
               <SidebarSubMenuItem
                 to="/admin/centralen-depozitar"
                 content="Централен депозитар за хартии од вредност"
-              />
+                />
               <SidebarSubMenuItem
                 to="/admin/narodna-banka"
                 content="Народна банка"
-              />
+                />
               <SidebarSubMenuItem
                 to="/admin/fond-za-penzisko"
                 content="Фонд за пензиско и инвалидско осигурување"
-              />
+                />
               <SidebarSubMenuItem
                 to="/admin/spisok"
                 content="Список на консолидирани деловни субјекти"
-              />
+                />
               <SidebarSubMenuItem
                 to="/admin/stranski-direktori"
                 content="Странски директни инвестиции"
-              />
+                />
               <SidebarSubMenuItem
                 to="/admin"
                 content="Завршни годишни сметки (од НАИМС)"
-              />
+                />
               <SidebarSubMenuItem
                 to="/admin"
                 content="Статистички извештај за приходите по дејности"
-              />
+                />
               <SidebarSubMenuItem
                 to="/admin"
                 content="Список на консолидирани деловни субјекти"
-              />
+                />
               <SidebarSubMenuItem to="/admin" content="Преглед на логови" />
             </SidebarSubMenu>
+                </SidebarMenuItem>
             <SidebarMenuItem
               activeIndex={activeIndex}
               handleClick={handleClick}
@@ -128,7 +130,10 @@ const AdminSidebar = () => {
               sidebarActive={sidebarActive}
               index={4}
             >
-              <SidebarSubMenuItem to="/admin" content="Централен регистар" />
+              <SidebarSubMenuItem 
+                to="/admin" 
+                content="Централен регистар" 
+              />
               <SidebarSubMenuItem
                 to="/admin"
                 content="Централен депозитар за хартии од вредност"

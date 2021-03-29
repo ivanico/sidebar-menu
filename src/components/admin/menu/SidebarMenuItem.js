@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Accordion, Icon, Menu } from 'semantic-ui-react';
+import { Accordion, Dropdown, Icon, Menu } from 'semantic-ui-react';
 
 const SidebarMenuItem = (props) => {
-  const {activeIndex, handleClick, index, content,to, isHeading, icon, iconSize} = props;
-
+  const {activeIndex, handleClick, index, content,to, isHeading, icon, iconSize, sidebarActive} = props;
+  if(sidebarActive){
   return ( <Accordion.Title
     className="ui"
     as={Menu.Item}
@@ -28,6 +28,26 @@ const SidebarMenuItem = (props) => {
 
 
   </Accordion.Title> );
+  }
+  return ( <Menu.Item
+    className="ui"
+    active={activeIndex === index}
+    index={index}
+    onClick={handleClick}
+  >
+    {!isHeading && to && 
+     <NavLink to={to}>
+        <Icon name={icon}size={iconSize} />
+      </NavLink>
+    }
+    {isHeading &&
+      <>
+     <Dropdown simple text={<Icon name={icon} size={iconSize} />}>
+       {props.children}
+     </Dropdown>
+      </>
+    }
+  </Menu.Item> );
 }
  
 export default SidebarMenuItem;
