@@ -35,7 +35,7 @@ const AdminTopMenu = () => {
     return (
       <div className="top-menu">
         <Menu>
-          <Item style={{width: "61px"}}>
+          <Item style={{width: "60px"}}>
             <NavLink to="/admin">
               <Icon name="react" size="large" style={{color:"white"}}/>
             </NavLink>

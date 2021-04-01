@@ -16,17 +16,19 @@ import Spisok from "./users/vnes-i-obrabotna-na-administrativni-podatoci/Spisok"
 import StranskiDirektori from "./users/vnes-i-obrabotna-na-administrativni-podatoci/StranskiDirektori";
 import { Container, Segment, Sidebar } from "semantic-ui-react";
 import Settings from "./admin/menu/Settings";
+import AdminSidebar from "./admin/menu/AdminSidebar";
+import AdminTopMenu from "./admin/menu/AdminTopMenu";
 
 function App() {
   return (
     <div className="App">
         <Router history={history}>
           <Route path="/" exact component={StartPage} />
-          {/* <Route path="/admin" component={AdminSidebar} />
-          <Route path="/admin" component={AdminTopMenu} /> */}
+          <Route path="/admin" component={AdminTopMenu} />
             {/* <div className="admin-sidebar"> */}
             <Sidebar.Pushable as={Segment} style={{ overflow: 'hidden' }}>
-          <Route path="/admin" component={AdminMenu}/>
+          {/* <Route path="/admin" component={AdminMenu}/> */}
+          <Route path="/admin" component={AdminSidebar} />
             <Sidebar.Pusher style={{minHeight: '100vh'}}>
               <Container>
           <Route path="/admin" exact component={Dashboard} />

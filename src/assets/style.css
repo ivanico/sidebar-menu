@@ -4,20 +4,22 @@
 }
 
 .nav-sidebar {
+    height: 100%;
     width: 60px;
     transition:.3s width ease-in-out;
 }
 
 .nav-sidebar.active {
+    height: 100%;
     width: 260px;
 }
 
 /* Bars icon */
-.inverted.vertical > i {
+/* .inverted.vertical > i {
     cursor: pointer;
     color:white;
     margin:10px 0 0 14.5px;
-}
+} */
 
 .nav-sidebar a {
     width: 100%;
@@ -156,3 +158,19 @@
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+.pushable{
+    height: calc(100vh - 56px) !important;
+    border-radius: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-bottom: none !important;
+    margin-top: 0 !important;
+}
+
+.pusher{
+    height: calc(100vh - 56px);
+}
+
+.sidebar {
+    top: 0 !important;
+}

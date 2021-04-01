@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Icon, Sidebar, Menu, Item } from 'semantic-ui-react';
 import SidebarAccordionHidingMenu from './SidebarAccordionHidingMenu';
 import SidebarMenuItem from './SidebarMenuItem';
@@ -30,13 +31,14 @@ const AdminSidebar = () => {
 
           direction="left"
         >
-          <Icon
+         
+          <SidebarAccordionHidingMenu sidebarActive={sidebarActive}> 
+          <Menu.Item as={Link}><Icon
           style={{margin:"18px"}}
             name={sidebarActive ? "close" : "bars"}
             size="large"
             onClick={showSidebar}
-            />
-          <SidebarAccordionHidingMenu sidebarActive={sidebarActive}>
+            /></Menu.Item>
             <SidebarMenuItem
               activeIndex={activeIndex}
               handleClick={handleClick}
@@ -149,10 +151,11 @@ const AdminSidebar = () => {
               />
               <SidebarSubMenuItem to="/admin" content="Спој на странски лица" />
             </SidebarSubMenu>
+            <Item style={{width:'100%', position:'absolute', bottom:'0', color: "rgba(255, 255, 255, 0.5)"}}>
+              {sidebarActive ? "version 1.0.0" :"v:1.0.0" } 
+            </Item>
           </SidebarAccordionHidingMenu>
-         <Item style={{ top:"58%" , color: "rgba(255, 255, 255, 0.5)"}}>
-          v:1.0 
-         </Item>
+         
         </Sidebar>
     );
 }

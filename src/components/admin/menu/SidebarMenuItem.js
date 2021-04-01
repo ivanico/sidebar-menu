@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Accordion, Icon, Menu } from 'semantic-ui-react';
+import { Accordion, Icon, Menu, Popup } from 'semantic-ui-react';
 
 const SidebarMenuItem = (props) => {
   const {activeIndex, handleClick, index, content,to, isHeading, icon, iconSize, sidebarActive} = props;
@@ -39,10 +39,13 @@ const SidebarMenuItem = (props) => {
     active={activeIndex === index}
     index={index}
     onClick={handleClick}
-  >
+    >
     {!isHeading && to && 
-     <NavLink to={to}>
-        <Icon name={icon}size={iconSize} />
+     <NavLink to={to}><Popup
+      trigger={<Icon name={icon} size={iconSize}/>}
+      content={content}
+      position='right center'
+    />
       </NavLink>
     }
 
