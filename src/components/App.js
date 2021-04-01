@@ -14,6 +14,8 @@ import NarodnaBanka from "./users/vnes-i-obrabotna-na-administrativni-podatoci/N
 import FondZaPenzisko from "./users/vnes-i-obrabotna-na-administrativni-podatoci/FondZaPenzisko";
 import Spisok from "./users/vnes-i-obrabotna-na-administrativni-podatoci/Spisok";
 import StranskiDirektori from "./users/vnes-i-obrabotna-na-administrativni-podatoci/StranskiDirektori";
+import { Container, Segment, Sidebar } from "semantic-ui-react";
+import Settings from "./admin/menu/Settings";
 
 function App() {
   return (
@@ -22,11 +24,14 @@ function App() {
           <Route path="/" exact component={StartPage} />
           {/* <Route path="/admin" component={AdminSidebar} />
           <Route path="/admin" component={AdminTopMenu} /> */}
+            {/* <div className="admin-sidebar"> */}
+            <Sidebar.Pushable as={Segment} style={{ overflow: 'hidden' }}>
           <Route path="/admin" component={AdminMenu}/>
+            <Sidebar.Pusher style={{minHeight: '100vh'}}>
+              <Container>
           <Route path="/admin" exact component={Dashboard} />
 
           {/* Мени на екранот за СДР експертите */}
-            <div className="admin-sidebar">
               <Route path="/admin/korisnici-i-uslugi" exact component={KorisniciUslugi} />
               <Route path="/admin/klasifikacii" exact component={Klasifikacii} />
               <Route path="/admin/mesecha-obrabotka" exact component={MesechaObrabotka} />
@@ -38,8 +43,11 @@ function App() {
               <Route path="/admin/spisok" exact component={Spisok} />
               <Route path="/admin/stranski-direktori" exact component={StranskiDirektori} />
               <Route path="/admin/fond-za-penzisko" exact component={StranskiDirektori} />
+              <Route path="/admin/settings" exact component={Settings} />
 
-            </div>
+            </Container>
+            </Sidebar.Pusher>
+            </Sidebar.Pushable>
         </Router>
     </div>
   );

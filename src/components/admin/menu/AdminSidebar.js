@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Icon, Sidebar, Menu } from 'semantic-ui-react';
+import { Icon, Sidebar, Menu, Item } from 'semantic-ui-react';
 import SidebarAccordionHidingMenu from './SidebarAccordionHidingMenu';
 import SidebarMenuItem from './SidebarMenuItem';
 import SidebarSubMenu from './SidebarSubMenu';
@@ -25,7 +25,10 @@ const AdminSidebar = () => {
           className="blue"
           vertical
           visible
-          animation="overlay"
+          animation={sidebarActive?"push":"overlay"}
+          // animation="overlay"
+
+          direction="left"
         >
           <Icon
           style={{margin:"18px"}}
@@ -147,6 +150,9 @@ const AdminSidebar = () => {
               <SidebarSubMenuItem to="/admin" content="Спој на странски лица" />
             </SidebarSubMenu>
           </SidebarAccordionHidingMenu>
+         <Item style={{ top:"58%" , color: "rgba(255, 255, 255, 0.5)"}}>
+          v:1.0 
+         </Item>
         </Sidebar>
     );
 }

@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { Dropdown, Icon, Menu, Image } from 'semantic-ui-react';
+import { Dropdown, Icon, Menu, Image, Item } from 'semantic-ui-react';
 import "semantic-ui-css/semantic.min.css";
 import img from '../../../assets/1.jpg'
+import { NavLink } from 'react-router-dom';
 
 
 const AdminTopMenu = () => {
 
     const [activeItem,setActiveItem]= useState('')
-    const friendOptions = [
+    const items = [
       {
         key: 'Settings & privacy',
-        text: 'Settings & privacy',
+        text: <NavLink to="/admin/settings">Settings & privacy</NavLink>,
         value: 'Settings & privacy',
         image: <Icon name="setting" size="large" />
       },
@@ -34,6 +35,11 @@ const AdminTopMenu = () => {
     return (
       <div className="top-menu">
         <Menu>
+          <Item style={{width: "61px"}}>
+            <NavLink to="/admin">
+              <Icon name="react" size="large" style={{color:"white"}}/>
+            </NavLink>
+          </Item>
           <Menu.Item
           
             name="editorials"
@@ -65,7 +71,7 @@ const AdminTopMenu = () => {
                 <Dropdown
                   inline
                   image
-                  options={friendOptions}
+                  options={items}
                   trigger={
                     <div style={{display:'inline-block'}}>
                     <Image src={img} avatar />

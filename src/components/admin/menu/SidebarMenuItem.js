@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Accordion, Dropdown, Icon, Menu } from 'semantic-ui-react';
+import { Accordion, Icon, Menu } from 'semantic-ui-react';
 
 const SidebarMenuItem = (props) => {
   const {activeIndex, handleClick, index, content,to, isHeading, icon, iconSize, sidebarActive} = props;
